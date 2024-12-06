@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Passeio sonoro </title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Passeio sonoro</h1>
+
+    <div class="container">
+        <div id="green" class="circle">1</div>
+        <div id="red" class="circle">2</div>
+        <div id="yellow" class="circle">3</div>
+        <div id="blue" class="circle">4</div>
+        <div id="orange" class="circle">5 </div>
+        <div id="pink" class="circle">6 </div>
+    </div>
+
+    <a href="../index.html">←</a>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js', {scope: './'})
+                    .then(registration => console.log('SW registrado'))
+                    .catch(err => console.log('Erro SW:', err));
+            });
+        }
+    </script>
+  
+    
+</body>
+</html>
